@@ -1,0 +1,409 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+:root {
+  --pinterest: #be172d;
+  --facebook: #3b599a;
+  --dribble: #ea4081;
+  --instagram: rgba(193, 53, 132, 255);
+  --behance: #1869ff;
+  --twitter: #1ca1f1;
+  --blogger: #f57f01;
+  --linkedin: #0177b6;
+  --white: #ffffff;
+  --social-icons: #9ca4a5;
+  --top-font: #8a8a8a;
+  --botton-font: #c2c0c0;
+  --body-background: #f3f2fa;
+}
+body {
+  width: 100vw;
+  background-color: var(--body-background);
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+input {
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+}
+.icon {
+  position: relative;
+  font-size: larger;
+  color: var(--white);
+  padding: 0.5rem;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4.5rem;
+  padding: 0 4rem;
+  justify-content: center;
+}
+.card-header:has(input[type="checkbox"]:checked) {
+  background-color: var(--white);
+}
+.card {
+  width: 18rem;
+}
+.card-container img {
+  position: absolute;
+  margin-top: -2.5rem;
+  margin-left: 6.25rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: 0.2rem solid var(--white);
+}
+.card-header {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding-bottom: 4rem;
+  position: relative;
+}
+.card-body {
+  background-color: var(--white);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.social-icons {
+  color: var(--social-icons);
+  text-align: center;
+}
+.social-icons > a {
+  padding: 0.5rem;
+}
+input[type="checkbox"] {
+  z-index: 10;
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  opacity: 0;
+}
+.checkbox-container {
+  z-index: 0;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  background-color: transparent;
+  border: 0.1rem solid var(--white);
+  border-radius: 0.2rem;
+}
+.checkbox-container::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 0.25rem;
+  bottom: 0.2rem;
+  width: 0.3rem;
+  height: 0.6rem;
+  border: solid var(--white);
+  border-width: 0 0.15rem 0.15rem 0;
+  transform: rotate(40deg);
+}
+input:checked ~ .checkbox-container::after {
+  display: block;
+}
+.pinterest {
+  .card-header {
+    background-color: var(--pinterest);
+  }
+  img {
+    filter: drop-shadow(0.15rem 0.15rem 0.5rem var(--pinterest));
+  }
+  &:has(input[type="checkbox"]:checked) .card-header {
+    background-color: var(--white);
+  }
+  .card-header:has(input[type="checkbox"]:checked) {
+    .icon {
+      color: var(--pinterest);
+    }
+    .checkbox-container {
+      border: 0.1rem solid var(--pinterest);
+    }
+    .checkbox-container::after {
+      border: solid var(--pinterest);
+      border-width: 0 0.15rem 0.15rem 0;
+    }
+    ~ .card-body {
+      background-color: var(--pinterest);
+    }
+    ~ .card-body > .top-font {
+      color: var(--white);
+    }
+    ~ .card-body .bottom-font {
+      color: var(--white);
+    }
+    ~ .card-body .social-icons {
+      color: var(--white);
+    }
+  }
+}
+.facebook {
+  .card-header {
+    background-color: var(--facebook);
+  }
+  img {
+    filter: drop-shadow(0.15rem 0.15rem 0.5rem var(--facebook));
+  }
+  .card-header:has(input[type="checkbox"]:checked) {
+    .icon {
+      color: var(--facebook);
+    }
+    .checkbox-container {
+      border: 0.1rem solid var(--facebook);
+    }
+    .checkbox-container::after {
+      border: solid var(--facebook);
+      border-width: 0 0.15rem 0.15rem 0;
+    }
+    ~ .card-body {
+      background-color: var(--facebook);
+    }
+    ~ .card-body > .top-font {
+      color: var(--white);
+    }
+    ~ .card-body .bottom-font {
+      color: var(--white);
+    }
+    ~ .card-body .social-icons {
+      color: var(--white);
+    }
+  }
+}
+.instagram {
+  .card-header {
+    background-color: var(--instagram);
+  }
+  img {
+    filter: drop-shadow(0.15rem 0.15rem 0.5rem var(--instagram));
+  }
+  .card-header:has(input[type="checkbox"]:checked) {
+    .icon {
+      color: var(--instagram);
+    }
+    .checkbox-container {
+      border: 0.1rem solid var(--instagram);
+    }
+    .checkbox-container::after {
+      border: solid var(--instagram);
+      border-width: 0 0.15rem 0.15rem 0;
+    }
+    ~ .card-body {
+      background-color: var(--instagram);
+    }
+    ~ .card-body > .top-font {
+      color: var(--white);
+    }
+    ~ .card-body .bottom-font {
+      color: var(--white);
+    }
+    ~ .card-body .social-icons {
+      color: var(--white);
+    }
+  }
+}
+.behance {
+  .card-header {
+    background-color: var(--behance);
+  }
+  img {
+    filter: drop-shadow(0.15rem 0.15rem 0.5rem var(--behance));
+  }
+  .card-header:has(input[type="checkbox"]:checked) {
+    .icon {
+      color: var(--behance);
+    }
+    .checkbox-container {
+      border: 0.1rem solid var(--behance);
+    }
+    .checkbox-container::after {
+      border: solid var(--behance);
+      border-width: 0 0.15rem 0.15rem 0;
+    }
+    ~ .card-body {
+      background-color: var(--behance);
+    }
+    ~ .card-body > .top-font {
+      color: var(--white);
+    }
+    ~ .card-body .bottom-font {
+      color: var(--white);
+    }
+    ~ .card-body .social-icons {
+      color: var(--white);
+    }
+  }
+}
+.dribbble {
+  .card-header {
+    background-color: var(--dribble);
+  }
+  img {
+    filter: drop-shadow(0.15rem 0.15rem 0.5rem var(--dribble));
+  }
+  .card-header:has(input[type="checkbox"]:checked) {
+    .icon {
+      color: var(--dribble);
+    }
+    .checkbox-container {
+      border: 0.1rem solid var(--dribble);
+    }
+    .checkbox-container::after {
+      border: solid var(--dribble);
+      border-width: 0 0.15rem 0.15rem 0;
+    }
+    ~ .card-body {
+      background-color: var(--dribble);
+    }
+    ~ .card-body > .top-font {
+      color: var(--white);
+    }
+    ~ .card-body .bottom-font {
+      color: var(--white);
+    }
+    ~ .card-body .social-icons {
+      color: var(--white);
+    }
+  }
+}
+.twitter {
+  .card-header {
+    background-color: var(--twitter);
+  }
+  img {
+    filter: drop-shadow(0.15rem 0.15rem 0.5rem var(--twitter));
+  }
+  .card-header:has(input[type="checkbox"]:checked) {
+    .icon {
+      color: var(--twitter);
+    }
+    .checkbox-container {
+      border: 0.1rem solid var(--twitter);
+    }
+    .checkbox-container::after {
+      border: solid var(--twitter);
+      border-width: 0 0.15rem 0.15rem 0;
+    }
+    ~ .card-body {
+      background-color: var(--twitter);
+    }
+    ~ .card-body > .top-font {
+      color: var(--white);
+    }
+    ~ .card-body .bottom-font {
+      color: var(--white);
+    }
+    ~ .card-body .social-icons {
+      color: var(--white);
+    }
+  }
+}
+.blogger {
+  .card-header {
+    background-color: var(--blogger);
+  }
+  img {
+    filter: drop-shadow(0.15rem 0.15rem 0.5rem var(--blogger));
+  }
+  .card-header:has(input[type="checkbox"]:checked) {
+    .icon {
+      color: var(--blogger);
+    }
+    .checkbox-container {
+      border: 0.1rem solid var(--blogger);
+    }
+    .checkbox-container::after {
+      border: solid var(--blogger);
+      border-width: 0 0.15rem 0.15rem 0;
+    }
+    ~ .card-body {
+      background-color: var(--blogger);
+    }
+    ~ .card-body > .top-font {
+      color: var(--white);
+    }
+    ~ .card-body .bottom-font {
+      color: var(--white);
+    }
+    ~ .card-body .social-icons {
+      color: var(--white);
+    }
+  }
+}
+.linkedin {
+  .card-header {
+    background-color: var(--linkedin);
+  }
+  img {
+    filter: drop-shadow(0.15rem 0.15rem 0.5rem var(--linkedin));
+  }
+  .card-header:has(input[type="checkbox"]:checked) {
+    .icon {
+      color: var(--linkedin);
+    }
+    .checkbox-container {
+      border: 0.1rem solid var(--linkedin);
+    }
+    .checkbox-container::after {
+      border: solid var(--linkedin);
+      border-width: 0 0.15rem 0.15rem 0;
+    }
+    ~ .card-body {
+      background-color: var(--linkedin);
+    }
+    ~ .card-body > .top-font {
+      color: var(--white);
+    }
+    ~ .card-body .bottom-font {
+      color: var(--white);
+    }
+    ~ .card-body .social-icons {
+      color: var(--white);
+    }
+  }
+}
+.top-font {
+  font-family: "playball";
+  padding: 4rem 2rem 2rem 2rem;
+  text-align: center;
+  color: var(--top-font);
+}
+.bottom-font-conatiner {
+  padding: 0.5rem 0.5rem 2rem;
+}
+.bottom-font {
+  font-family: "Nunito Sans";
+  font-size: medium;
+  text-align: center;
+  padding: 0 0.75rem;
+  color: var(--botton-font);
+  text-align: center;
+}
+.social-icons {
+  text-align: center;
+  padding: 1.2rem 0.5rem 2rem 0.5rem;
+}
+.pinterest:hover,
+.facebook:hover,
+.behance:hover,
+.blogger:hover,
+.instagram:hover,
+.linkedin:hover,
+.dribbble:hover,
+.twitter:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
